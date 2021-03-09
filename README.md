@@ -51,14 +51,13 @@ R004 J4,J5,J6
 where `R###` is the reservation identifier and `A##-J##` is a seat.
 
 ##Classes
-###Main
-###SeatingChart
-####methods:
-`+ initializeChart: ConcurrentHashMap<Character, ArrayList<Integer>>`
-
-
-<strike> public String[][] initializeChart </strike> : was an original documentation of a seating chart initialization method with 2-d array, but
- I chagned this later to HashMap (concurrent, so it is thread-safe) 
+* Main
+    * methods:
+    
+       `initializeChart: ConcurrentHashMap<Character, ArrayList<Integer>>`
+        
+        <strike> public String[][] initializeChart </strike> : was an original documentation of a seating chart initialization method with 2-d array, 
+        but I changed this later to HashMap (concurrent, so it is thread-safe)
 
 ## Contributors
 The following people who have contributed to this project:
