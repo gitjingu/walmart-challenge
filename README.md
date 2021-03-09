@@ -6,6 +6,7 @@ This project is a utility that assigns seats in a movie theater to fulfil reserv
 Before you begin, ensure you have met the following requirements:
 * You have installed the latest version of `Java`. I'm using Java 11.0.2.
 * You have `Windows/Linux/Mac` OS for command line (input and output).
+* You have installed the `JUnit` package and related dependencies. I'm using JUnit 4. 
 
 ## Design Requirements
 
@@ -54,10 +55,15 @@ where `R###` is the reservation identifier and `A##-J##` is a seat.
 * Main
     * methods:
     
+        `+ main(String[] args) : void`
+        
+* Seating Chart
+    * methods:
+    
        `initializeChart: ConcurrentHashMap<Character, ArrayList<Integer>>`
         
         <strike> public String[][] initializeChart </strike> : was an original documentation of a seating chart initialization method with 2-d array, 
-        but I changed this later to HashMap (concurrent, so it is thread-safe)
+        but I changed this later to HashMap (concurrent, so thread-safe)
 
 ## Contributors
 The following people who have contributed to this project:
