@@ -51,9 +51,7 @@ R004 J4,J5,J6
 
 where `R###` is the reservation identifier and `A##-J##` is a seat.
 
-
-##Running the program
-
+## Running the program
  This program runs on Java. 
 * Open your terminal
 * `cd 'walmart-challenge'`to go to  directory where the unzipped folder saved. 
@@ -69,30 +67,50 @@ Run:
    ```
    javac Main.java <filepath>.txt
     ```
+    
 ## Classes
 
-
-###Main
+### Main
   * methods:
-    
-        '+ main(String[] args) : void'
+
+        + main(String[] args) : void
         
-###SeatingChart
+### SeatingChart
   * fields:
     
-        `+ rows : int`
+        + rows : int
+        + columns : int
+        + availableSeats: int
+  * methods:
+      
+          + initializeChart() : ConcurrentHashMap<Character, ArrayList<Integer>()
+          
+  <strike> public String[][] initializeChart </strike> 
+  
+ * was an original seating chart initialization method with 2-d array, 
+  but I changed this later to HashMap (concurrent, so thread-safe)
+
+### ReservationSeatingInterface
+  * methods:
+        #   
         
-        `+ columns : int`
-        
-        `+ availableSeats: int`
-    * methods:
+### ReservationMaker (implements ReservationSeatingInterface)
+  * fields:
     
-       `+ initializeChart(): ConcurrentHashMap<Character, ArrayList<Integer>>`
+        # layout : ConcurrentHashMap<Character, ArrayList<Integer>>
+        # orderedReservations : LinkedHashMap<String, ArrayList<String>>
+        # reservations : HashMap<String, Integer>
+        - availableSeats : int
+        - seatsPerRow : int
+        - rows: int
         
-        <strike> public String[][] initializeChart </strike> : was an original seating chart initialization method with 2-d array, 
-        but I changed this later to HashMap (concurrent, so thread-safe)
+  * methods:
+    
+        + ReservationMaker() : ReservationMaker
+        + validateInput(String []) : boolean
+        + findBestSeats (String, int) : String
         
-* ReservationMaker 
+       
 
 ## Contributors
 The following people who have contributed to this project:
