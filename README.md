@@ -1,4 +1,4 @@
-# WalmartChallenge - Vishnu Kumar
+# walmart-challenge - Vishnu Kumar
 
 This project is a utility that assigns seats in a movie theater to fulfil reservation requests.
 ## Prerequisites
