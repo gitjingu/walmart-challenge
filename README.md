@@ -67,15 +67,16 @@ Run:
    ```
    javac Main.java <filepath>.txt
     ```
-## Classes
+    
+### Classes
 
 
-###Main
+### Main
   * methods:
     
         '+ main(String[] args) : void'
         
-###SeatingChart
+### SeatingChart
   * fields:
     
         `+ rows : int`
