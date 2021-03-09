@@ -85,14 +85,20 @@ Run:
       
           + initializeChart() : ConcurrentHashMap<Character, ArrayList<Integer>()
           
-  <strike> public String[][] initializeChart </strike> 
+     <strike> public String[][] initializeChart </strike> 
   
- * was an original seating chart initialization method with 2-d array, 
-  but I changed this later to HashMap (concurrent, so thread-safe)
+    * this was my original idea seating chart initialization method with 2-d array, but I changed this later to HashMap (concurrent, so thread-safe)
 
 ### ReservationSeatingInterface
+  * I decided to make this interface in development because I was having trouble calling and implementing static
+  methods from the Reservation class – for functions like "validateInput", I return a boolean, but I had thought maybe
+  creating an interface would allow me to throw exceptions easier (especially from a function that has many possible
+  conditions. However, in the interest of time, I didn't experiment too much with too much exception handling. 
+    
   * methods:
-        #   
+
+        + validateInput(String[] split) : boolean
+        + findBestSeats(String name, int num) : String
         
 ### ReservationMaker (implements ReservationSeatingInterface)
   * fields:
@@ -109,7 +115,6 @@ Run:
         + ReservationMaker() : ReservationMaker
         + validateInput(String []) : boolean
         + findBestSeats (String, int) : String
-        
        
 
 ## Contributors
@@ -119,4 +124,7 @@ The following people who have contributed to this project:
 
 ## Contact
 
-If you want to contact me you can reach me at `vvkumar1@asu.edu`
+If you want to contact me you can reach me at: [vvkumar1@asu.edu](mailto:vvkumar1@asu.edu)
+* [twitter](https://twiter.com/jingusucks)
+* [instagram](https://instagram.com/vishnudez)
+* [my website](https://jingu.me)
