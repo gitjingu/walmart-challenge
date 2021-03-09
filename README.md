@@ -12,7 +12,7 @@ Before you begin, ensure you have met the following requirements:
 
 The following assumptions have been made:
 
-* The movie theater has 200 seats organized in a 10x20 array.
+* The movie theater has 400 seats organized in a 10x20 array.
 ````
         [[ SCREEN ]]
      --------------------
@@ -51,19 +51,47 @@ R004 J4,J5,J6
 
 where `R###` is the reservation identifier and `A##-J##` is a seat.
 
+##Running the program
+
+ This program runs on Java. 
+* Open your terminal
+* `cd 'walmart-challenge'`to go to  directory where the unzipped folder saved. 
+
+* Navigate to the folder `src`.
+Run:
+  ```
+  javac Main.java
+   ```
+
+ * Now Run the following command to start the application
+ :
+   ```
+   javac Main.java <filepath>.txt
+    ```
 ## Classes
-* Main
+
+
+###Main
+  * methods:
+    
+        '+ main(String[] args) : void'
+        
+###SeatingChart
+  * fields:
+    
+        `+ rows : int`
+        
+        `+ columns : int`
+        
+        `+ availableSeats: int`
     * methods:
     
-        `+ main(String[] args) : void`
+       `+ initializeChart(): ConcurrentHashMap<Character, ArrayList<Integer>>`
         
-* Seating Chart
-    * methods:
-    
-       `initializeChart: ConcurrentHashMap<Character, ArrayList<Integer>>`
-        
-        <strike> public String[][] initializeChart </strike> : was an original documentation of a seating chart initialization method with 2-d array, 
+        <strike> public String[][] initializeChart </strike> : was an original seating chart initialization method with 2-d array, 
         but I changed this later to HashMap (concurrent, so thread-safe)
+        
+* ReservationMaker 
 
 ## Contributors
 The following people who have contributed to this project:
