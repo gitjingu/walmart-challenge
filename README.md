@@ -115,6 +115,9 @@ Run:
         + ReservationMaker() : ReservationMaker
         + validateInput(String []) : boolean
         + findBestSeats (String, int) : String
+        + findRow(int) : Character //buggy
+        + update(Character, int) : void
+        + createOutputfile(String) : String
        
 
 ## Contributors
