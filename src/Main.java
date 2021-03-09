@@ -12,7 +12,7 @@ public class Main {
         int numRows = SeatingChart.rows;
         int numCols = SeatingChart.columns;
         int matrixSize = numRows*numCols;
-        StringBuilder finalSeatings = new StringBuilder(); //keep track of finalSeatings
+        String finalSeatings = new String(); //keep track of finalSeatings
 
         if(args.length>0)
         {
@@ -27,28 +27,26 @@ public class Main {
 
         //validate inputs
         int lineCount=1; //keep track of what line we are at
-        ReservationSeatingInterface theaterSeats = new ReservationMaker();
+        ReservationMaker theaterSeats = new ReservationMaker();
         while((line = in.readLine()) != null)
         {
-            linesFromFile.append(line);
             String[] split = line.split(" ");
             boolean check = theaterSeats.validateInput(split); //validates inputs
             if(check) {
-                String bestSeats = theaterSeats.findBestSeats(split[0], Integer.parseInt(split[1]));
+                theaterSeats.findBestSeats(split[0], Integer.parseInt(split[1]));
             }
             else
                 System.out.println("At line: "+lineCount+"==> invalid input received. Reservation not created.");
             lineCount++;
         }
 
-
-
         //Outputs to file the seating arrangement
         in.close();
-        FileWriter out = new FileWriter("seatings.txt");
-
-        out.write(finalSeatings.toString());
-        System.out.println("\nReservations updated at '/walmart-challenge/src/seatings.txt' ");
-        out.close();
+        System.out.println(theaterSeats.createFile());
+//        FileWriter out = new FileWriter("seatings.txt");
+//        System.out.print
+//        out.write(finalSeatings.toString());
+//        System.out.println("\nReservations updated at '/walmart-challenge/src/seatings.txt' ");
+//        out.close();
     }
 }
