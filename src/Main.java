@@ -4,35 +4,51 @@ import java.io.*;
 
 public class Main {
     //does File Handling and testing
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
 
         //Reading the file in and converts all lines from file into a string
         BufferedReader in;
         String line;
+        int numRows = SeatingChart.rows;
+        int numCols = SeatingChart.columns;
+        int matrixSize = numRows*numCols;
+        StringBuilder finalSeatings = new StringBuilder(); //keep track of finalSeatings
+
         if(args.length>0)
         {
             File file = new File(args[0]);
             in = new BufferedReader(new FileReader(file));
         }
         else {
-            System.out.println("File input not found!");
+            System.out.println("File input not found! Please try with a valid file.");
             throw new FileNotFoundException();
         }
         StringBuilder linesFromFile = new StringBuilder();
+
+        //validate inputs
+        int lineCount=1; //keep track of what line we are at
+        ReservationSeatingInterface theaterSeats = new ReservationMaker();
         while((line = in.readLine()) != null)
         {
             linesFromFile.append(line);
-            linesFromFile.append(System.lineSeparator());
+            String[] split = line.split(" ");
+            boolean check = theaterSeats.validateInput(split); //validates inputs
+            if(check) {
+                String bestSeats = theaterSeats.findBestSeats(split[0], Integer.parseInt(split[1]));
+            }
+            else
+                System.out.println("At line: "+lineCount+"==> invalid input received. Reservation not created.");
+            lineCount++;
         }
 
-        int numRows = 10;
-        int numCols = 20;
+
 
         //Outputs to file the seating arrangement
         in.close();
         FileWriter out = new FileWriter("seatings.txt");
-        out.write(linesFromFile.toString());
-        System.out.println("Successfully wrote to the file");
+
+        out.write(finalSeatings.toString());
+        System.out.println("\nReservations updated at '/walmart-challenge/src/seatings.txt' ");
         out.close();
     }
 }

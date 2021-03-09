@@ -6,12 +6,15 @@ import java.util.ArrayList;
  */
 public class SeatingChart
 {
+    public static int rows = 10; //A-J
+    public static int columns = 20;//1-20
+    public static int availableSeats = rows*columns; //400
     /**
      * Generate a seating chart as a Hashmap
      * @return ConcurrentHashMap<Character, ArrayList<Integer>>
      * O(n) runtime method
      */
-    public static ConcurrentHashMap<Character, ArrayList<Integer>> initializeChart(int rows, int columns)
+    public static ConcurrentHashMap<Character, ArrayList<Integer>> initializeChart()
     {
         ConcurrentHashMap<Character, ArrayList<Integer>> chart =
                 new ConcurrentHashMap<Character, ArrayList<Integer>>();
