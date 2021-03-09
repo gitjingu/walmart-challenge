@@ -50,7 +50,7 @@ R004 J4,J5,J6
 
 where `R###` is the reservation identifier and `A##-J##` is a seat.
 
-##Classes
+## Classes
 * Main
     * methods:
     
