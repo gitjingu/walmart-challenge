@@ -68,7 +68,7 @@ Run:
    javac Main.java <filepath>.txt
     ```
     
-### Classes
+## Classes
 
 
 ### Main
