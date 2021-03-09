@@ -26,7 +26,7 @@ public class Main {
         }
 
         int numRows = 10;
-        int numColumns = 20;
+        int numCols = 20;
 
         //Outputs to file the seating arrangement
         in.close();
