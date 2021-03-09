@@ -8,7 +8,7 @@ public class Main {
 
         //Reading the file in and converts all lines from file into a string
         BufferedReader in;
-        String line="";
+        String line;
         if(args.length>0)
         {
             File file = new File(args[0]);
@@ -25,11 +25,14 @@ public class Main {
             linesFromFile.append(System.lineSeparator());
         }
 
+        int numRows = 10;
+        int numColumns = 20;
+
         //Outputs to file the seating arrangement
         in.close();
         FileWriter out = new FileWriter("seatings.txt");
         out.write(linesFromFile.toString());
-        System.out.println("Successfully wrote to the file:);
+        System.out.println("Successfully wrote to the file");
         out.close();
     }
 }
