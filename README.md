@@ -51,8 +51,7 @@ R004 J4,J5,J6
 
 where `R###` is the reservation identifier and `A##-J##` is a seat.
 
-##Running the program
-
+## Running the program
  This program runs on Java. 
 * Open your terminal
 * `cd 'walmart-challenge'`to go to  directory where the unzipped folder saved. 
